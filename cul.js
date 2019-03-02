@@ -6,6 +6,8 @@ const config = require("./config.json");
 client.config = config;
 client.commands = new Enmap();
 
+require ('./eventLoader')(client);
+
 // Event Handler with filesystem.
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
@@ -14,7 +16,7 @@ fs.readdir("./events/", (err, files) => {
       let eventName = file.split(".")[0];
       client.on(eventName, event.bind(null, client));
     });
-  });
+});
 
 
 // Command Handler
