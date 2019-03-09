@@ -1,5 +1,5 @@
-module.exports = (client, message, args) => {
-    let messageF = args.slice(0).join(" ");
+exports.run = (client, message, args) => {
+    let messageF = args.join(" ");
     message.delete();
     message.channel.send(messageF);
 };

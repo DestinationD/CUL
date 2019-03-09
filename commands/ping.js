@@ -1,4 +1,4 @@
-module.exports = (client, message, args) => {
-    // line 1 being exports.run didn't help either
+exports.run = (client, message, args) => {
+    message.delete();
     message.channel.send("pong!");
 };
